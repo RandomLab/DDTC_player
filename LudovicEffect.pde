@@ -12,7 +12,8 @@ class LudovicEffect{
 
 	void apply(PGraphics p){
 		shader.set("iResolution", float(width), float(height));
-		shader.set("dec",map(mouseX,0,width,0,1));
+		//shader.set("dec",map(mouseX,0,width,0,1));
+		shader.set("dec",0.3);
 		p.filter(shader);
 		
 		//println(p.width+"  "+p.height);
