@@ -8,5 +8,5 @@ N'oubliez pas télécharger les vidéos et les mettre dans le dossier "video" du
 
 ## Utilisation.
 
-Librairies utilisées:
+Librairies utilisées:  
 	- VLCJVideo
