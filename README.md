@@ -6,6 +6,8 @@ DDDTC_player
 N'oubliez pas télécharger les vidéos et les mettre dans le dossier "video" du projet.
 
 
+
+
 ## Utilisation.
 
 Librairies utilisées:  
