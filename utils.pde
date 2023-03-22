@@ -1,7 +1,7 @@
 //-------------------------------------------------------------
 //FILE FINDERS / WITH EXT AND MAC NOT SHOWING
 //-------------------------------------------------------------
-String [] getFilesInDirectory(String path, String ext){
+String [] getFilesInDirectory(String path, String [] ext){
 	File file = new File(path);
   if (file.isDirectory()) {
     println("is a directory");
@@ -14,7 +14,15 @@ String [] getFilesInDirectory(String path, String ext){
 			// Get the file name
 			String name = names[i];
 			// Check if it ends with the extension
-			if (name.endsWith(ext) && !name.startsWith(".")) {
+
+			boolean autorizedExt = false;
+			for (int j = 0; j < ext.length; j++) {
+				if (name.toUpperCase().endsWith(ext[j].toUpperCase()) && !name.startsWith(".")) {
+					autorizedExt = true;
+				}
+			}
+
+			if (autorizedExt) {
 				// Add it to the list
 				files.append(name);
 			}
@@ -28,3 +36,5 @@ String [] getFilesInDirectory(String path, String ext){
     return null;
   }
 }
+
+

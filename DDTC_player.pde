@@ -9,6 +9,7 @@ boolean fullScreen = false;
 //-------------------------------------------------------------
 //VIDEO PATH
 String [] paths;
+String [] ext = {"mp4","m4v"};
 //INERNAL VAR
 MainVideo mainVideo;
 PGraphics layerA;
@@ -34,7 +35,7 @@ void settings(){
 void setup() {
 	mainVideo = new MainVideo(this);
 
-	paths = getFilesInDirectory(sketchPath()+"/data/video",".MP4");
+	paths = getFilesInDirectory(sketchPath()+"/data/video",ext);
 	println(paths.length);
 
 	for (int i = 0; i < paths.length; ++i) {
