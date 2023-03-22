@@ -17,7 +17,7 @@ PGraphics layerA;
 //STUDENT EFFECT
 //-------------------------------------------------------------
 LudovicEffect ludovicEffect;
-
+SarahEffect sarahEffect;
 
 //-------------------------------------------------------------
 //SETTINGS
@@ -48,7 +48,7 @@ void setup() {
 
 	//STUDENT EFFECT
 	ludovicEffect = new LudovicEffect();
-
+	sarahEffect = new SarahEffect();
 }
 
 //-------------------------------------------------------------
@@ -65,7 +65,7 @@ void draw(){
 	if(mainVideo.getVideo().isPlaying())
 		layerA.image(mainVideo.getVideo(), 0, 0,width, height);
 	
-	ludovicEffect.apply(layerA);
+	//ludovicEffect.apply(layerA);
 	layerA.endDraw();
 
 	//---------------------------------------------------------
@@ -73,8 +73,16 @@ void draw(){
 
 	//println("s");
 	//ludovicEffect.postBufer(layerA);
+	sarahEffect.postBufer(layerA);
 
 	//shader and filter
 	mainVideo.run();
 	mainVideo.interfaceDebug(40,height-140);
+
+
+	noStroke();
+	fill(0);
+	rect(0,0,80,20);
+	fill(255);
+	text(frameRate,10,10);
 }
