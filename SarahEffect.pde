@@ -36,7 +36,7 @@ class SarahEffect{
 	void postBufer(PGraphics p) {
 		if (frameCount % 2 ==  0)p.loadPixels();
 		
-		if (frameCount > 2) {
+		if (frameCount > 2 && p.pixels!=null && p.pixels.length > 0) {
 			for (int x = 0;x < width;x += inc) {
 				for (int y = 0;y < height;y += inc) {
 					int c = p.pixels[y * width + x];

@@ -18,6 +18,9 @@ PGraphics layerA;
 //-------------------------------------------------------------
 LudovicEffect ludovicEffect;
 SarahEffect sarahEffect;
+MaxEffect maxEffect;
+
+String currentEffect = "None";
 
 //-------------------------------------------------------------
 //SETTINGS
@@ -36,19 +39,17 @@ void setup() {
 	mainVideo = new MainVideo(this);
 
 	paths = getFilesInDirectory(sketchPath()+"/data/video",ext);
-	println(paths.length);
-
 	for (int i = 0; i < paths.length; ++i) {
 		println(sketchPath()+"/data/video/"+paths[i]);
 		mainVideo.addPath(sketchPath()+"/data/video/"+paths[i]);
 	}
 	mainVideo.play();
-	
 	layerA = createGraphics( width, height, P2D);
 
 	//STUDENT EFFECT
 	ludovicEffect = new LudovicEffect();
 	sarahEffect = new SarahEffect();
+	maxEffect = new MaxEffect();
 }
 
 //-------------------------------------------------------------
@@ -64,22 +65,34 @@ void draw(){
 	
 	if(mainVideo.getVideo().isPlaying())
 		layerA.image(mainVideo.getVideo(), 0, 0,width, height);
+
+	if(currentEffect == "Ludovic"){
+		ludovicEffect.apply(layerA);
+	}
 	
 	//ludovicEffect.apply(layerA);
 	layerA.endDraw();
 
 	//---------------------------------------------------------
+	//image layer A
 	image(layerA, 0, 0);
 
-	//println("s");
 	//ludovicEffect.postBufer(layerA);
-	sarahEffect.postBufer(layerA);
-
+	
+	if(currentEffect == "Sarah"){
+		sarahEffect.postBufer(layerA);
+	}
+	if(currentEffect == "Max"){
+		maxEffect.postBuffer_pixelArt(layerA,mainVideo.index);
+	}
+	
 	//shader and filter
 	mainVideo.run();
+	//-------------------------------------------------------------
+	//debug mode
+	//-------------------------------------------------------------
+	
 	mainVideo.interfaceDebug(40,height-140);
-
-
 	noStroke();
 	fill(0);
 	rect(0,0,80,20);
