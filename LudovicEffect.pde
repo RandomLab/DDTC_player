@@ -1,8 +1,6 @@
 class LudovicEffect{
-
-
 	PShader shader;
-
+	
 	LudovicEffect(){
 		shader = loadShader(sketchPath()+"/data/shaders/sobel.glsl");
 
@@ -31,7 +29,7 @@ class LudovicEffect{
 				rect(i,j,10,10);
 			}
 		}
+	}	
 
-	}
-	
+	//----------------------------------------------
 }
