@@ -73,6 +73,7 @@ class MainVideo{
 	//-------------------------------------------------------------
 	void interfaceDebug(int x,int y){
 		fill(0);
+		noStroke();
 		rect(x,y,800,100);
 
 		fill(255);

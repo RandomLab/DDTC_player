@@ -20,4 +20,8 @@ void keyPressed(){
 	if(keyCode==UP){
 		previousEffect();
 	}
+
+	if(key=='t'){
+		sendToControl("d"+int(random(registerEffect.length)));
+	}
 }

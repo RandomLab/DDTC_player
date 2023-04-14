@@ -24,6 +24,12 @@ void previousEffect() {
 		indexEffect = registerEffect.length - 1;
 	currentEffect = registerEffect[indexEffect];
 }
+
+void jumpToEffect(int i){
+	currentEffect = registerEffect[i];
+	indexEffect = i;
+}
+
 //-------------------------------------------------------------
 //EFFECT DEBUG DRAW
 //-------------------------------------------------------------
@@ -31,11 +37,13 @@ void effectDebugDraw() {
 	noStroke();
 	
 	String msg = "fps : " + frameRate + "\n";
-	msg += "Press up or down to scroll effect ";
+	msg += "Press up and down to scroll effects ";
 	msg += " | Thank to Student of 3D Création numérique";
+	msg += " | we have "+int(registerEffect.length-1)+" effects";
 	
 	textAlign(LEFT,CENTER);
 	fill(0);
+	noStroke();
 	rect(10,10,textWidth(msg+10)+20,50);
 	fill(255);
 	text(msg,10,10,textWidth(msg+10)+20,50);
@@ -43,7 +51,7 @@ void effectDebugDraw() {
 	//----------------------------
 	textAlign(LEFT,BOTTOM);
 	int px=20;
-	int py=200;
+	int py=300;
 	int inter=20;
 
 	for(int i=0;i<registerEffect.length;i++){

@@ -89,6 +89,9 @@ void setup() {
 void draw() {
 	background(0);
 	//---------------------------------------------------------
+	//routine de control des effets
+	runController();
+	//---------------------------------------------------------
 	//LAYER A / video
 	//---------------------------------------------------------
 	layerA.beginDraw();
@@ -162,5 +165,6 @@ void draw() {
 	if (debug ==  true) {
 		mainVideo.interfaceDebug(40,height - 140);
 		effectDebugDraw();
+		debugController();
 	}
 }

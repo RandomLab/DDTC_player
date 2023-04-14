@@ -29,9 +29,12 @@ void drawUdp() {
 void receive(byte[] data, String ip, int port) {	// <-- extended handler
 	  String message = new String(data);
 	  // print the result
-	  println("receive: \""+message+"\" from " + ip + " on port " + port);
-	  txt = millis() + " | receive: "+message+" | from: " + ip + " | port: " + port;
-		sendToControl(message);
+	  //println("receive: \""+message+"\" from " + ip + " on port " + port);
+	  //txt = millis() + " | receive: "+message+" | from: " + ip + " | port: " + port;
+		
+		if(message.length>1){
+			sendToControl(message);
+		}
 }
 
 /*
