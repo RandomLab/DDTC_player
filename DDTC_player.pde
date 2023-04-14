@@ -3,14 +3,18 @@ import VLCJVideo.*;
 //-------------------------------------------------------------
 //EXPOSED VAR
 //-------------------------------------------------------------
+//Mode fullscreen
 boolean fullScreen = false;
+//Affichage du debug mode
 boolean debug = true;
+//Temps en seconde de la durée de l'effet
 int timeEffect = 10;
 //-------------------------------------------------------------
 //INERNAL VAR
 //-------------------------------------------------------------
-//VIDEO PATH
+//VIDEO PATH / fichier vidéo reconnue
 String[] paths;
+//Extension recherché
 String[] ext = {"mp4","m4v"};
 //INERNAL VAR
 MainVideo mainVideo;
@@ -48,6 +52,9 @@ void setup() {
 	mainVideo.play();
 	layerA = createGraphics(width, height, P2D);
 	
+	//-------------------------------
+	//DECLARATION DES EFFETS
+	//-------------------------------
 	addEffect("None");
 	//STUDENT EFFECT
 	ludovicEffect = new LudovicEffect();
@@ -73,6 +80,7 @@ void setup() {
 	addEffect("Max3");
 	maxEffect4 = new MaxEffect4(layerA);
 	addEffect("Max4");
+	//-------------------------------
 }
 
 //-------------------------------------------------------------
@@ -100,8 +108,9 @@ void draw() {
 	//image layer A
 	image(layerA, 0, 0);
 	
-	//ludovicEffect.postBufer(layerA);
-	
+	//-------------------------------------------------------------
+	//POST BUFFER EFFECT
+	//-------------------------------------------------------------
 	// SARAH EFFECT 1 ---------------------------------------------------------
 	if (currentEffect == "Sarah_A_1") {
 		sarahEffect.postBufer(layerA,1);

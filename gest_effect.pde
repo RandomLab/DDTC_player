@@ -1,11 +1,11 @@
 //-------------------------------------------------------------
-//EFFECT GEST
+//EFFECT GESTIONNAIRE
 //-------------------------------------------------------------
 String currentEffect = "None";
 int indexEffect=0;
 String [] registerEffect = {};
 //-------------------------------------------------------------
-//REGISTER EEFFECT
+//REGISTER EFFECT
 //-------------------------------------------------------------
 void addEffect(String name) {
 	registerEffect = append(registerEffect, name);
@@ -24,7 +24,6 @@ void previousEffect() {
 		indexEffect = registerEffect.length - 1;
 	currentEffect = registerEffect[indexEffect];
 }
-
 //-------------------------------------------------------------
 //EFFECT DEBUG DRAW
 //-------------------------------------------------------------
@@ -41,9 +40,10 @@ void effectDebugDraw() {
 	fill(255);
 	text(msg,10,10,textWidth(msg+10)+20,50);
 
+	//----------------------------
 	textAlign(LEFT,BOTTOM);
 	int px=20;
-	int py=90;
+	int py=200;
 	int inter=20;
 
 	for(int i=0;i<registerEffect.length;i++){
