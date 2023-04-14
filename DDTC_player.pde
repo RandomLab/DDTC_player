@@ -20,8 +20,11 @@ PGraphics layerA;
 //-------------------------------------------------------------
 LudovicEffect ludovicEffect;
 SarahEffect sarahEffect;
-MaxEffect maxEffect;
 SarahEffect2 sarahEffect2;
+MaxEffect maxEffect;
+MaxEffect2 maxEffect2;
+MaxEffect3 maxEffect3;
+MaxEffect4 maxEffect4;
 //-------------------------------------------------------------
 //SETTINGS
 //-------------------------------------------------------------
@@ -56,14 +59,20 @@ void setup() {
 	addEffect("Sarah_A_3");
 	addEffect("Sarah_A_4");
 
-	maxEffect = new MaxEffect();
-	addEffect("Max");
-
 	sarahEffect2 = new SarahEffect2(layerA);
 	addEffect("Sarah_B_1");
 	addEffect("Sarah_B_2");
 	addEffect("Sarah_B_3");
 	addEffect("Sarah_B_4");
+
+	maxEffect = new MaxEffect();
+	addEffect("Max");
+	maxEffect2 = new MaxEffect2();
+	addEffect("Max2");
+	maxEffect3 = new MaxEffect3();
+	addEffect("Max3");
+	maxEffect4 = new MaxEffect4(layerA);
+	addEffect("Max4");
 }
 
 //-------------------------------------------------------------
@@ -106,10 +115,6 @@ void draw() {
 	if (currentEffect == "Sarah_A_4") {
 		sarahEffect.postBufer(layerA,4);
 	}
-	// MAX EFFECT 1 ---------------------------------------------------------
-	if (currentEffect == "Max") {
-		maxEffect.postBuffer_pixelArt(layerA,mainVideo.index);
-	}
 	// SARAH EFFECT 2 ---------------------------------------------------------
 	if (currentEffect == "Sarah_B_1") {
 	  sarahEffect2.postBuffer(layerA);
@@ -123,6 +128,23 @@ void draw() {
 	if (currentEffect == "Sarah_B_4") {
 	  sarahEffect2.postBuffer4(layerA);
 	}
+	// MAX EFFECT 1 ---------------------------------------------------------
+	if (currentEffect == "Max") {
+		maxEffect.postBuffer_pixelArt(layerA,mainVideo.index);
+	}
+	// MAX EFFECT 2 ---------------------------------------------------------
+	if (currentEffect == "Max2") {
+		maxEffect2.postBuffer_square(layerA);
+	}
+	// MAX EFFECT 3 ---------------------------------------------------------
+	if (currentEffect == "Max3") {
+		maxEffect3.postBuffer_printMvt(mainVideo.index);
+	}
+	// MAX EFFECT 4 ---------------------------------------------------------
+	if (currentEffect == "Max4") {
+		maxEffect4.postBuffer_boom(layerA);
+	}
+	
 	//shader and filter
 	mainVideo.run();
 	//-------------------------------------------------------------
