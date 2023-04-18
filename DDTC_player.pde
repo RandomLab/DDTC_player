@@ -44,6 +44,8 @@ void settings() {
 void setup() {
 	mainVideo = new MainVideo(this);
 	
+	initUdp();
+
 	paths = getFilesInDirectory(sketchPath() + "/data/video",ext);
 	for (int i = 0; i < paths.length; ++i) {
 		println(sketchPath() + "/data/video/" + paths[i]);
