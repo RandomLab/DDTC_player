@@ -15,11 +15,16 @@ All the computers in the DDDTC player and game are connected to the same network
 
 ## Instalation / settings
 
-N'oubliez pas télécharger les vidéos et les mettre dans le dossier "video" du projet.
-[Lien vers les vidéos](https://system.freeboxos.fr:81/share/FSMqH12r0EnmqLey/video.zip)
 
+
+N'oubliez pas télécharger les vidéos et les mettre dans le dossier "video" du projet.
 Don't forget to download the videos and put them in the "video" folder of the project.
-[Link to the videos](https://system.freeboxos.fr:81/share/FSMqH12r0EnmqLey/video.zip)
+
+#### PACK FR
+[Link to the videos](https://system.freeboxos.fr:81/share/t1WuTIICjyISu5rl/video_FR.zip)
+
+#### PACK ENG
+
 
 ## Utilisation / Usage
 
