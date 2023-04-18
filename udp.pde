@@ -7,7 +7,7 @@ String txt = "";
 //-------------------------------------------------------------
 //CONTRUCTOR
 //-------------------------------------------------------------
-void iniUdp() {
+void initUdp() {
 	  size(500, 200);
 	  udp = new UDP(this, udpPort);
 	  //udp.log(true);//printout the connection activity
