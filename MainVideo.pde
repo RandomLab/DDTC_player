@@ -52,12 +52,20 @@ class MainVideo{
 		video.play();
 	}
 
+	void randomVideo() {
+		println("randomVideo");
+		index = (int)random(paths.length);
+		video.open(paths[index]);
+		video.play();
+	}
+
 	//-------------------------------------------------------------
 	//RUN
 	//-------------------------------------------------------------
 	void run(){
 		if(state=="FINISHED"){
-			nextVideo();
+			//nextVideo();
+			randomVideo();
 			state="";
 		}
 	}

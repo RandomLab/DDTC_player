@@ -1,6 +1,8 @@
 class LudovicEffect{
 	PShader shader;
 	
+	float t=0;
+
 	LudovicEffect(){
 		shader = loadShader(sketchPath()+"/data/shaders/sobel.glsl");
 
@@ -10,10 +12,11 @@ class LudovicEffect{
 
 	void apply(PGraphics p){
 		shader.set("iResolution", float(width), float(height));
-		shader.set("dec",map(mouseX,0,width,0,1));
+		shader.set("dec",0.75+sin(t)*0.25);
 		//shader.set("dec",3.3);
 		p.filter(shader);
 		
+		t+=0.01;
 		//println(p.width+"  "+p.height);
 	}
 

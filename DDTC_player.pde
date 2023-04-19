@@ -6,7 +6,7 @@ import VLCJVideo.*;
 //Mode fullscreen
 boolean fullScreen = false;
 //Affichage du debug mode
-boolean debug = true;
+boolean debug = false;
 //Temps en seconde de la durée de l'effet
 int timeEffect = 10;
 //-------------------------------------------------------------
@@ -22,6 +22,7 @@ PGraphics layerA;
 //-------------------------------------------------------------
 //STUDENT EFFECT
 //-------------------------------------------------------------
+BenoitEffect benoitEffect;
 LudovicEffect ludovicEffect;
 SarahEffect sarahEffect;
 SarahEffect2 sarahEffect2;
@@ -51,7 +52,7 @@ void setup() {
 		println(sketchPath() + "/data/video/" + paths[i]);
 		mainVideo.addPath(sketchPath() + "/data/video/" + paths[i]);
 	}
-	mainVideo.play();
+	mainVideo.randomVideo();
 	layerA = createGraphics(width, height, P2D);
 	
 	//-------------------------------
@@ -59,6 +60,10 @@ void setup() {
 	//-------------------------------
 	addEffect("None");
 	//STUDENT EFFECT
+	benoitEffect = new BenoitEffect();
+	addEffect("Benoit_1");
+	addEffect("Benoit_2");
+
 	ludovicEffect = new LudovicEffect();
 	addEffect("Ludovic");
 
@@ -104,6 +109,12 @@ void draw() {
 	
 	if (currentEffect == "Ludovic") {
 		ludovicEffect.apply(layerA);
+	}
+	if (currentEffect == "Benoit_1") {
+		benoitEffect.apply_1(layerA);
+	}
+	if (currentEffect == "Benoit_2") {
+		benoitEffect.apply_2(layerA);
 	}
 	
 	//ludovicEffect.apply(layerA);
